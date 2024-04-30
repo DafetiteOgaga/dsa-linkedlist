@@ -33,6 +33,7 @@ gcc linkedlist.c -o linkedlist
 
 // Run the compiled executable
 ./linkedlist
+```
 
 
 ### dsa-linkedlist and README were auto created
