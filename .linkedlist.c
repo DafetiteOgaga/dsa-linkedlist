@@ -22,7 +22,7 @@ void list_created (struct node *, int);
  * returns 0 on success
  * */
 int main (void) {
-	struct node * head = create();
+	struct node * head = create_nodes();
 	// printf("The head of the nodes is at: %p\n", head);
 	return (0);
 }
@@ -31,7 +31,7 @@ int main (void) {
  * create function - creates the linked list
  * returns the head of the linked list
  */
-struct node * create (void) {
+struct node * create_nodes (void) {
 	/* declarations and definitions */
 	struct node *head, *theNode, *temp;
 	int yes = 1, number, count;
@@ -70,8 +70,8 @@ struct node * create (void) {
 		}
 	}
 	temp = head; // resets the temp pointer to the head node
-	count = counter (temp); // invoke the counter function to print the number of elements
-	list_created (temp, count); // invoke the list function to print the list of elements like an array
+	count = count_elements (temp); // invoke the count_elements function to print the number of elements
+	print_list (temp, count); // invoke the print_list function to print the list of elements like an array
 	
 	putchar('\n');
 	return head;
@@ -81,7 +81,7 @@ struct node * create (void) {
  * counter function - counts the number of elements in the linked list
  * returns the number of elements
 */
-int counter (struct node *temp) {
+int count_elements (struct node *temp) {
 	int count = 0;
 
 	/* counts the number of elements i.e nodes */
@@ -97,7 +97,7 @@ int counter (struct node *temp) {
 /*
  * list_created function - prints the list of elements in the linked list
 */
-void list_created (struct node * temp, int count) {
+void print_list (struct node * temp, int count) {
 	
 	printf ("Result: ");
 

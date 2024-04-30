@@ -6,12 +6,21 @@ This program is written in C and creates a linked list based on user input. It t
 
 ## Description
 
-The program consists of the following components:
+### The program consists of the following components:
 
-1. **Node Structure**: Defines the structure of a node in the linked list, which includes the data part (data) and a pointer (next) to the next node.
-2. **Create Function**: Creates the linked list by taking user input and dynamically allocating memory for each node.
-3. **Counter Function**: Counts the number of elements in the linked list.
-4. **List Created Function**: Prints out the elements of the linked list in the form of an array.
+#### linkedlist.h
+- **Node Structure**: Defines the structure of a node in the linked list, which includes the data part (data) and a pointer (next) to the next node.
+- **Prototypes**: Function declaration of all the defined functions.
+
+#### main_linkedlist.c
+- **Main Function**: The main function (entry point).
+
+#### create_list.c
+- **Create_list Function**: Creates the linked list by taking user input and dynamically allocating memory for each node.
+
+#### print_and_count_list.c
+- **Count_elements Function**: Counts the number of elements in the linked list.
+- **Print_list Function**: Prints out the elements of the linked list in the form of an array.
 
 ## Usage
 
@@ -29,10 +38,10 @@ Here's a simple example of how to use the program:
 
 ```c
 // Compile the source code
-gcc linkedlist.c -o linkedlist
+gcc print_and_count_list.c create_list.c main_linkedlist.c -o <output_filename>
 
 // Run the compiled executable
-./linkedlist
+./<output_filename>
 ```
 
 
