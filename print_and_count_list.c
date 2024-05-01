@@ -34,9 +34,7 @@ void print_list (struct node * temp, int count) {
 	while (i < count) {
 		printf ("%d", temp->data); // prints the data part of the current node
 		temp = temp->next; // moves the pointer to the next node
-		if (i != (count - 1)) {
-			printf(", ");
-		};
+		(i != (count - 1)) && printf(", ");
 		i++;
 	}
 	printf("]");
