@@ -39,14 +39,16 @@ Here's a simple example of how to use the program:
 ```c
 // Clone the repository
 git clone https://github.com/DafetiteOgaga/dsa-linkedlist.git
-
-
+```
+```c
 // cd into the repository
-cd dsa-linkedlist 
-
+cd dsa-linkedlist
+```
+```c
 // Compile the source code
 gcc print_and_count_list.c create_list.c main_linkedlist.c -o output_file
-
+```
+```c
 // Run the compiled executable
 ./output_file
 ```
