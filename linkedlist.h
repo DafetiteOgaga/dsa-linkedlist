@@ -17,5 +17,9 @@ struct node {
 struct node * create_nodes (void);
 int count_elements (struct node *);
 void print_list (struct node *, int);
+struct node * add_node_to_beginning(struct node *);
+void add_node_to_end(struct node *);
+int add_node_to_any_position(struct node *, int);
+int lenth_of_numbers(int);
 
 #endif
