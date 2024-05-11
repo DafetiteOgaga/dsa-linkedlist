@@ -3,29 +3,21 @@
 /*
  * add_node_to_end function - appends a new node to the linked list
  */
-void add_node_to_end (struct node *head) {
+int add_node_to_end (struct node *head) {
 	/* declarations and definitions */
 	struct node *newNode, *temp;
-	char input [5];
-	int number;
+	int resp, check;
 	
 	newNode = (struct node *) malloc (sizeof(struct node)); // node creation in memory
-
-	/* checks that the space is allocated for the node */
-	if (newNode == NULL) {
-		printf ("Could not allocate space");
-		exit(1);
+	check = confirm_space_allocation (newNode); // checks if the allocation was successful
+	if (check) {
+		return check;
 	}
 
 	printf ("Enter last data >>> ");
-	scanf("%s", input);
-	number = atoi(input); // tries to convert the input to an integer
-
-	/* checks if the input is an integer or if the user is done entering data */
-	if (number != 0 || input[0] == '0') {
-		newNode->data = number; // stores data into the node
-	} else {
-		printf("Invalid entry\n"); // exits the operation
+	resp = converts_input_to_integer(newNode, 1); // converts input to integer
+	if (resp) {
+		return resp;
 	}
 
 	temp = head;
