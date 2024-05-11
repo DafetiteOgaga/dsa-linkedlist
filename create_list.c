@@ -7,30 +7,22 @@
 struct node * create_nodes (void) {
 	/* declarations and definitions */
 	struct node *head, *newNode, *temp;
-	int yes = 1, number, count;
-	char input [50];
+	int yes = 1, check, resp;
 
 	head = NULL; // head definition before head node
 	
-	printf ("Enter a char when done.\n");
+	printf ("Enter a char when done.\nYou can only enter 5 digits per node.\n");
 	while (yes) {
 		newNode = (struct node *) malloc (sizeof(struct node)); // node creation in memory
-
-		/* checks that the space is allocated for the node */
-		if (newNode == NULL) {
-			printf ("Could not allocate space");
-			exit(yes);
+		check = confirm_space_allocation (newNode); // checks if the allocation was successful
+		if (check) {
+			return NULL;
 		}
 
 		printf ("Enter your data >>> ");
-		scanf("%s", input);
-		number = atoi(input); // tries to convert the input to an integer
-
-		/* checks if the input is an integer or if the user is done entering data */
-		if (number != 0 || input[0] == '0') {
-			newNode->data = number; // stores data into the node
-		} else {
-			break; // exit if the input is not an integer
+		resp = converts_input_to_integer(newNode, 0); // converts input to integer
+		if (resp) {
+			break;
 		}
 
 		newNode->next = NULL; // sets the node's pointer to NULL
